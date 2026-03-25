@@ -28,20 +28,25 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
         @media (max-width: 640px) {
             ::-webkit-scrollbar { display: none; }
         }
+
         .hero-pattern {
             background-color: #ffffff;
             background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
             background-size: 20px 20px;
         }
+
         input[type="text"], input[type="number"], input[type="email"], select, textarea {
             font-size: 16px !important;
         }
+
         .card-reveal {
             animation: fadeInReveal 1s ease-out forwards;
         }
+
         @keyframes fadeInReveal {
             from { opacity: 0; transform: translateY(20px) scale(0.95); }
             to { opacity: 1; transform: translateY(0) scale(1); }
@@ -50,6 +55,7 @@
 </head>
 <body class="font-sans text-gray-800 bg-slate-50 antialiased selection:bg-blue-200 selection:text-blue-900">
 
+    <!-- ===== MÀN HÌNH TRANG CHỦ ===== -->
     <div id="landing-view" class="transition-opacity duration-300 flex flex-col min-h-screen">
         <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
@@ -78,9 +84,11 @@
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">Mua Trước Trả Sau</span><br class="hidden sm:block" />
                         đến Quản lý tài chính
                     </h2>
+
                     <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 leading-relaxed max-w-2xl mx-auto px-2">
                         Đây là dự án nghiên cứu cá nhân về thói quen sử dụng các phương thức thanh toán như SPayLater, LazPayLater, Fundiin... trên các sàn Thương mại điện tử và ảnh hưởng của chúng đến cách sinh viên quản lý tiền bạc.
                     </p>
+
                     <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
                         <button id="startSurveyBtnHero" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-secondary hover:bg-blue-900 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
                             Bắt đầu khảo sát (5-7 phút)
@@ -91,6 +99,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="absolute top-1/4 left-0 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
             <div class="absolute top-1/3 right-0 w-64 h-64 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
         </section>
@@ -105,6 +114,7 @@
         </footer>
     </div>
 
+    <!-- ===== MÀN HÌNH KHẢO SÁT ===== -->
     <div id="survey-view" class="hidden min-h-screen bg-slate-50 flex flex-col">
         <div class="bg-white shadow-sm sticky top-0 z-50">
             <div class="max-w-4xl mx-auto px-4 py-3 sm:py-4 flex justify-between items-center">
@@ -127,6 +137,7 @@
         <section id="survey-form" class="py-6 sm:py-10 flex-grow">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
                 <div class="bg-white rounded-2xl shadow-sm sm:shadow-lg overflow-hidden border border-gray-200/60 p-5 sm:p-8">
+
                     <div class="mb-8 sm:mb-10">
                         <div class="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm font-medium text-gray-500 mb-3 gap-1">
                             <span id="progress-text" class="text-primary font-semibold">Phần 1 / 5: Thông tin cá nhân</span>
@@ -141,11 +152,13 @@
                     <form id="customSurveyForm" class="space-y-8">
                         <input type="hidden" name="timestamp" id="timestamp">
 
+                        <!-- ================= PHẦN 1 ================= -->
                         <div id="step-1" class="step-content">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 1. THÔNG TIN CÁ NHÂN</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 mb-6 border border-blue-100">
                                 <p class="text-sm text-gray-700">Xin vui lòng cho biết một số thông tin cá nhân cơ bản. Các thông tin này chỉ phục vụ cho mục đích phân tích mối liên hệ trong nghiên cứu và được cam kết bảo mật.</p>
                             </div>
+
                             <div class="space-y-6">
                                 <div class="space-y-2">
                                     <label class="block font-semibold text-gray-700 text-sm sm:text-base">Câu 1. Bạn là sinh viên của nhóm trường nào tại Hà Nội? <span class="text-red-500">*</span></label>
@@ -161,6 +174,7 @@
                                         <option value="Khác">Khác</option>
                                     </select>
                                 </div>
+
                                 <div class="space-y-2">
                                     <label class="block font-semibold text-gray-700 text-sm sm:text-base">Câu 2. Bạn đang học năm thứ mấy? <span class="text-red-500">*</span></label>
                                     <select name="q2" required class="w-full border-gray-300 rounded-xl shadow-sm focus:border-primary focus:ring focus:ring-primary/20 p-3 sm:p-3.5 border bg-white outline-none transition-shadow">
@@ -172,6 +186,7 @@
                                         <option value="Năm thứ năm hoặc hơn">Năm thứ năm hoặc hơn</option>
                                     </select>
                                 </div>
+
                                 <div class="space-y-2">
                                     <label class="block font-semibold text-gray-700 text-sm sm:text-base">Câu 3. Giới tính của bạn là gì? <span class="text-red-500">*</span></label>
                                     <select name="q3" required class="w-full border-gray-300 rounded-xl shadow-sm focus:border-primary focus:ring focus:ring-primary/20 p-3 sm:p-3.5 border bg-white outline-none transition-shadow">
@@ -181,6 +196,7 @@
                                         <option value="Khác">Khác</option>
                                     </select>
                                 </div>
+
                                 <div class="space-y-2">
                                     <label class="block font-semibold text-gray-700 text-sm sm:text-base">Câu 4. Khoản thu nhập/trợ cấp hàng tháng của bạn (từ mọi nguồn) trung bình khoảng bao nhiêu? <span class="text-red-500">*</span></label>
                                     <select name="q4" required class="w-full border-gray-300 rounded-xl shadow-sm focus:border-primary focus:ring focus:ring-primary/20 p-3 sm:p-3.5 border bg-white outline-none transition-shadow">
@@ -195,6 +211,7 @@
                             </div>
                         </div>
 
+                        <!-- ================= PHẦN 2 ================= -->
                         <div id="step-2" class="step-content hidden">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 2. MỨC ĐỘ SỬ DỤNG BNPL</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
@@ -202,22 +219,32 @@
                                 <p class="text-sm text-gray-600 mb-4">Mức độ sử dụng BNPL phản ánh thói quen và mức độ ưu tiên của cá nhân đối với các dịch vụ thanh toán trì hoãn khi mua sắm trực tuyến. Khái niệm này bao gồm tần suất sử dụng, sự ưu tiên lựa chọn BNPL thay vì thanh toán ngay, và ý định tiếp tục sử dụng dịch vụ trong tương lai.</p>
                                 <p class="text-sm sm:text-base text-gray-800 font-medium border-t border-blue-200 pt-3">Vui lòng đánh giá mức độ đồng ý của bạn với các phát biểu dưới đây:</p>
                             </div>
+
                             <div class="bg-white p-4 sm:p-6 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors mb-4 sm:mb-6">
                                 <p class="font-semibold text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Câu 5. Tôi đã từng sử dụng hình thức mua trước trả sau khi mua sắm trên sàn thương mại điện tử. <span class="text-red-500">*</span></p>
                                 <div class="flex flex-col sm:flex-row w-full gap-2 sm:gap-3">
                                     <label class="flex-1 cursor-pointer relative group">
                                         <input type="radio" name="q5" value="5" required class="peer sr-only">
-                                        <div class="w-full h-full min-h-[40px] sm:min-h-[48px] py-2 px-1 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-200 text-gray-600 peer-checked:bg-green-600 peer-checked:border-green-600 peer-checked:text-white group-hover:bg-blue-50 transition-all font-medium text-sm text-center shadow-sm peer-checked:shadow-md leading-tight">Có</div>
+                                        <div class="w-full h-full min-h-[40px] sm:min-h-[48px] py-2 px-1 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-200 text-gray-600 peer-checked:bg-green-600 peer-checked:border-green-600 peer-checked:text-white group-hover:bg-blue-50 transition-all font-medium text-sm text-center shadow-sm peer-checked:shadow-md leading-tight">
+                                            Có
+                                        </div>
                                     </label>
                                     <label class="flex-1 cursor-pointer relative group">
                                         <input type="radio" name="q5" value="1" class="peer sr-only">
-                                        <div class="w-full h-full min-h-[40px] sm:min-h-[48px] py-2 px-1 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-200 text-gray-600 peer-checked:bg-red-500 peer-checked:border-red-500 peer-checked:text-white group-hover:bg-blue-50 transition-all font-medium text-sm text-center shadow-sm peer-checked:shadow-md leading-tight">Không</div>
+                                        <div class="w-full h-full min-h-[40px] sm:min-h-[48px] py-2 px-1 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-200 text-gray-600 peer-checked:bg-red-500 peer-checked:border-red-500 peer-checked:text-white group-hover:bg-blue-50 transition-all font-medium text-sm text-center shadow-sm peer-checked:shadow-md leading-tight">
+                                            Không
+                                        </div>
                                     </label>
                                 </div>
+                                <p class="text-xs text-gray-500 mt-2 italic">
+                                    Nếu bạn chọn "Không", các phát biểu bên dưới sẽ được tự động điền ở mức "Không đồng ý", nhưng bạn vẫn có thể chỉnh lại.
+                                </p>
                             </div>
+
                             <div id="likert-container-2" class="space-y-4 sm:space-y-6"></div>
                         </div>
 
+                        <!-- ================= PHẦN 3 ================= -->
                         <div id="step-3" class="step-content hidden">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 3. TÍNH TIỆN LỢI VÀ HẤP DẪN</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
@@ -225,9 +252,11 @@
                                 <p class="text-sm text-gray-600 mb-4">Nhận thức về tính tiện lợi và sự hấp dẫn là đánh giá chủ quan của sinh viên về mức độ dễ sử dụng, thuận tiện và lôi cuốn của dịch vụ BNPL. Khái niệm này bao gồm sự đơn giản trong thao tác, khả năng hoàn tất giao dịch nhanh chóng, cảm giác giảm áp lực tài chính và sức hấp dẫn từ các ưu đãi đi kèm.</p>
                                 <p class="text-sm sm:text-base text-gray-800 font-medium border-t border-blue-200 pt-3">Vui lòng đánh giá mức độ đồng ý của bạn với các phát biểu dưới đây:</p>
                             </div>
+
                             <div id="likert-container-3" class="space-y-4 sm:space-y-6"></div>
                         </div>
 
+                        <!-- ================= PHẦN 4 ================= -->
                         <div id="step-4" class="step-content hidden">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 4. XU HƯỚNG CHI TIÊU PHÁT SINH</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
@@ -235,9 +264,11 @@
                                 <p class="text-sm text-gray-600 mb-4">Xu hướng chi tiêu phát sinh đề cập đến các hành vi mua sắm ngoài kế hoạch tài chính ban đầu dưới tác động của BNPL. Khái niệm này bao gồm việc mua sắm ngoài dự kiến, gia tăng khối lượng chi tiêu, và ra quyết định mua hàng ngay cả khi khả năng chi trả thực tế tại thời điểm đó còn hạn chế.</p>
                                 <p class="text-sm sm:text-base text-gray-800 font-medium border-t border-blue-200 pt-3">Vui lòng đánh giá mức độ đồng ý của bạn với các phát biểu dưới đây:</p>
                             </div>
+
                             <div id="likert-container-4" class="space-y-4 sm:space-y-6"></div>
                         </div>
 
+                        <!-- ================= PHẦN 5 ================= -->
                         <div id="step-5" class="step-content hidden">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 5. QUẢN LÝ TÀI CHÍNH CÁ NHÂN</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
@@ -245,14 +276,21 @@
                                 <p class="text-sm text-gray-600 mb-4">Hành vi quản lý tài chính cá nhân phản ánh năng lực và thói quen điều tiết nguồn lực tài chính của sinh viên để đảm bảo sự an toàn tài chính. Khái niệm này bao gồm việc lập kế hoạch chi tiêu, theo dõi thu chi, kiểm soát ngân sách, duy trì tiết kiệm, kiểm soát nợ và chuẩn bị quỹ dự phòng.</p>
                                 <p class="text-sm sm:text-base text-gray-800 font-medium border-t border-blue-200 pt-3">Vui lòng đánh giá mức độ đồng ý của bạn với các phát biểu dưới đây:</p>
                             </div>
+
                             <div id="likert-container-5" class="space-y-4 sm:space-y-6"></div>
                         </div>
 
                         <div class="pt-8 border-t border-gray-100 flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-4 mt-8">
-                            <button type="button" id="prevBtn" class="hidden w-full sm:w-auto bg-white text-gray-700 px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold text-base sm:text-lg transition-all border-2 border-gray-200 hover:bg-gray-50 hover:border-gray-300">Quay lại</button>
+                            <button type="button" id="prevBtn" class="hidden w-full sm:w-auto bg-white text-gray-700 px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold text-base sm:text-lg transition-all border-2 border-gray-200 hover:bg-gray-50 hover:border-gray-300">
+                                Quay lại
+                            </button>
                             <div class="flex-grow"></div>
-                            <button type="button" id="nextBtn" class="w-full sm:w-auto bg-primary hover:bg-blue-600 text-white px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-lg">Tiếp tục</button>
-                            <button type="submit" id="submitBtn" class="hidden w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-xl flex justify-center items-center">Gửi kết quả</button>
+                            <button type="button" id="nextBtn" class="w-full sm:w-auto bg-primary hover:bg-blue-600 text-white px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-lg">
+                                Tiếp tục
+                            </button>
+                            <button type="submit" id="submitBtn" class="hidden w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-xl flex justify-center items-center">
+                                Gửi kết quả
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -260,8 +298,10 @@
         </section>
     </div>
 
+    <!-- ===== MÀN HÌNH CẢM ƠN & TAROT ===== -->
     <div id="thank-you-view" class="hidden min-h-screen bg-slate-900 flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"></div>
+
         <div class="max-w-2xl w-full z-10 text-center">
             <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 sm:p-10 rounded-3xl shadow-2xl card-reveal">
                 <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -284,20 +324,12 @@
                             <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-left">
                                 <div class="w-40 sm:w-48 shrink-0">
                                     <img id="tarot-img" src="" alt="Tarot Card" class="w-full rounded-lg shadow-lg border-2 border-amber-500/50 object-cover bg-slate-800 min-h-[250px]">
-                                    <div id="tarot-blank-card" class="hidden w-full min-h-[250px] rounded-lg shadow-lg border-2 border-amber-500/50 bg-gradient-to-br from-white via-slate-100 to-violet-100 text-slate-700 p-4 flex flex-col items-center justify-center text-center">
-                                        <div class="text-4xl mb-3">✨</div>
-                                        <div class="font-bold text-lg mb-2">The Blank Card</div>
-                                        <div class="text-sm leading-relaxed">Một trang giấy trắng. Một ngày hoàn toàn do bạn định hình.</div>
-                                    </div>
                                 </div>
-                                <div class="flex-1">
-                                    <div class="flex flex-wrap gap-2 mb-3">
-                                        <span id="tarot-number" class="inline-flex items-center rounded-full bg-white/10 border border-white/10 text-slate-200 px-3 py-1 text-xs sm:text-sm">Lá bài #--</span>
-                                        <span id="tarot-group" class="inline-flex items-center rounded-full bg-white/10 border border-white/10 text-slate-200 px-3 py-1 text-xs sm:text-sm">Nhóm: --</span>
-                                    </div>
-                                    <h4 id="tarot-title" class="text-2xl font-bold text-white mb-2">Đang rút bài...</h4>
-                                    <p id="tarot-subtitle" class="text-amber-300 font-medium mb-3 text-sm sm:text-base"></p>
-                                    <p id="tarot-desc" class="text-slate-200 leading-relaxed text-sm sm:text-base">Vũ trụ đang gửi thông điệp cho bạn...</p>
+                                <div>
+                                    <h4 id="tarot-title" class="text-2xl font-bold text-white mb-3">Đang rút bài...</h4>
+                                    <p id="tarot-desc" class="text-slate-200 leading-relaxed text-sm sm:text-base">
+                                        Vũ trụ đang gửi thông điệp cho bạn...
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -305,14 +337,19 @@
                 </div>
 
                 <div id="action-buttons" class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                    <button id="returnHomeBtn" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 px-8 py-3 rounded-full font-semibold transition-all">Quay về trang chủ</button>
-                    <button id="openTuViBtn" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"><span>🔮</span> Xem tử vi miễn phí</button>
+                    <button id="returnHomeBtn" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 px-8 py-3 rounded-full font-semibold transition-all">
+                        Quay về trang chủ
+                    </button>
+                    <button id="openTuViBtn" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                        <span>🔮</span> Xem tử vi miễn phí
+                    </button>
                 </div>
 
                 <div id="tuvi-form-container" class="hidden mt-8 text-left bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 relative">
                     <button id="closeTuViBtn" class="absolute top-4 right-4 text-white/50 hover:text-white text-xl">✕</button>
                     <h3 class="text-2xl font-bold text-amber-300 mb-2">Luận giải tử vi chi tiết</h3>
                     <p class="text-blue-100 text-sm mb-6 italic">* Lưu ý: Vui lòng điền ngày tháng năm sinh theo lịch Dương.</p>
+
                     <form id="tuviForm" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
@@ -356,7 +393,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" id="submitTuViBtn" class="w-full mt-6 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg flex justify-center items-center">Gửi thông tin lấy lá số</button>
+                        <button type="submit" id="submitTuViBtn" class="w-full mt-6 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg flex justify-center items-center">
+                            Gửi thông tin lấy lá số
+                        </button>
                     </form>
                 </div>
 
@@ -364,7 +403,9 @@
                     <div class="text-5xl mb-4">✅</div>
                     <h3 class="text-2xl font-bold text-white mb-3">Gửi thông tin thành công!</h3>
                     <p class="text-blue-100 mb-6">Xin chân thành cảm ơn. Chúng tôi sẽ gửi bản luận giải tử vi chi tiết qua email của bạn trong vòng 24h tới nhé!</p>
-                    <button id="returnHomeFromTuViBtn" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 px-8 py-3 rounded-full font-semibold transition-all">Quay về trang chủ</button>
+                    <button id="returnHomeFromTuViBtn" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 px-8 py-3 rounded-full font-semibold transition-all">
+                        Quay về trang chủ
+                    </button>
                 </div>
             </div>
         </div>
@@ -373,161 +414,173 @@
     <script>
         const SURVEY_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmWPcHsZjZzLrySIpUNdDlAtqEV5sFm7fUqa3pDoXANAHQgUDoHWo2tIE2JtWYf-f2dQ/exec';
         const TUVI_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7zpMH6-CWrNgMaqEw-1cGLFv0zm1FJq3EkBc5SG4kFHrHZfXIxyHTop_f7wWjmJ1a/exec';
-        const TAROT_BASE = 'https://raw.githubusercontent.com/SuperAgento/Student-survey/a1c7a520ab8a1724776fc297b86fef7224a253a6/Cards-png/';
 
         const tarotData = [
-            { id: 0, group: 'Major Arcana', file: '00-TheFool.png', title: '0. The Fool', subtitle: 'Kẻ Khờ', text: 'Hôm nay là ngày tuyệt vời để bước ra khỏi vùng an toàn. Hãy đón nhận những khởi đầu mới với tâm hồn rộng mở và đừng sợ mạo hiểm.' },
-            { id: 1, group: 'Major Arcana', file: '01-TheMagician.png', title: '1. The Magician', subtitle: 'Ảo Thuật Gia', text: 'Bạn có mọi công cụ và khả năng trong tay. Hãy tập trung ý chí, hôm nay là ngày để bạn biến ý tưởng của mình thành hiện thực.' },
-            { id: 2, group: 'Major Arcana', file: '02-TheHighPriestess.png', title: '2. The High Priestess', subtitle: 'Nữ Tư Tế', text: 'Hãy chậm lại và lắng nghe trực giác của bạn. Câu trả lời bạn tìm kiếm không nằm ở thế giới bên ngoài, mà ở sâu thẳm bên trong bạn.' },
-            { id: 3, group: 'Major Arcana', file: '03-TheEmpress.png', title: '3. The Empress', subtitle: 'Hoàng Hậu', text: 'Một ngày tràn ngập năng lượng nuôi dưỡng và sinh sôi. Hãy dành thời gian chăm sóc bản thân, làm đẹp và kết nối với thiên nhiên.' },
-            { id: 4, group: 'Major Arcana', file: '04-TheEmperor.png', title: '4. The Emperor', subtitle: 'Hoàng Đế', text: 'Sự kỷ luật và logic là chìa khóa. Hôm nay, hãy thiết lập các quy tắc rõ ràng, tổ chức lại công việc và tự tin nắm giữ quyền lãnh đạo.' },
-            { id: 5, group: 'Major Arcana', file: '05-TheHierophant.png', title: '5. The Hierophant', subtitle: 'Giáo Hoàng', text: 'Hãy làm theo những phương pháp truyền thống đã được kiểm chứng. Bạn có thể sẽ cần lời khuyên từ một người đi trước hoặc một cố vấn đáng tin cậy.' },
-            { id: 6, group: 'Major Arcana', file: '06-TheLovers.png', title: '6. The Lovers', subtitle: 'Tình Nhân', text: 'Năng lượng hòa hợp bao quanh bạn. Hôm nay có thể mang đến những kết nối tình cảm sâu sắc, hoặc bạn sẽ phải đưa ra một sự lựa chọn quan trọng dựa trên các giá trị của mình.' },
-            { id: 7, group: 'Major Arcana', file: '07-TheChariot.png', title: '7. The Chariot', subtitle: 'Cỗ Xe', text: 'Tập trung mục tiêu và tiến về phía trước! Sự quyết tâm và kiểm soát cảm xúc sẽ giúp bạn vượt qua mọi chướng ngại vật trong hôm nay.' },
-            { id: 8, group: 'Major Arcana', file: '08-Strength.png', title: '8. Strength', subtitle: 'Sức Mạnh', text: 'Không phải sức mạnh cơ bắp, mà là sự mềm mỏng, bao dung và lòng dũng cảm nội tâm sẽ giúp bạn thuần hóa mọi khó khăn của ngày hôm nay.' },
-            { id: 9, group: 'Major Arcana', file: '09-TheHermit.png', title: '9. The Hermit', subtitle: 'Ẩn Sĩ', text: 'Đôi khi bạn cần lùi lại một bước. Hôm nay hãy dành thời gian tĩnh lặng, tách mình khỏi đám đông để suy ngẫm và nạp lại năng lượng.' },
-            { id: 10, group: 'Major Arcana', file: '10-WheelOfFortune.png', title: '10. Wheel of Fortune', subtitle: 'Vòng Quay Số Phận', text: 'May mắn đang mỉm cười và vạn vật đang chuyển động. Hãy sẵn sàng đón nhận những thay đổi tích cực mang tính bước ngoặt.' },
-            { id: 11, group: 'Major Arcana', file: '11-Justice.png', title: '11. Justice', subtitle: 'Công Lý', text: 'Mọi thứ cần sự minh bạch và công bằng. Các quyết định bạn đưa ra hôm nay phải dựa trên sự thật và lý trí, nhân quả đang hoạt động.' },
-            { id: 12, group: 'Major Arcana', file: '12-TheHangedMan.png', title: '12. The Hanged Man', subtitle: 'Người Treo Ngược', text: 'Tạm dừng lại và buông bỏ sự bám chấp. Khi bạn thay đổi góc nhìn và ngừng cố gắng kiểm soát, một hướng đi mới sẽ sáng tỏ.' },
-            { id: 13, group: 'Major Arcana', file: '13-Death.png', title: '13. Death', subtitle: 'Tử Thần', text: 'Đừng sợ hãi, đây là sự kết thúc của một giai đoạn cũ để nhường chỗ cho những điều mới mẻ, tốt đẹp hơn. Hãy dọn dẹp những thứ không còn phục vụ bạn.' },
-            { id: 14, group: 'Major Arcana', file: '14-Temperance.png', title: '14. Temperance', subtitle: 'Tiết Chế', text: 'Giữ mọi thứ ở mức cân bằng là lời khuyên cho bạn hôm nay. Tránh mọi sự cực đoan, thái quá và tìm kiếm sự hài hòa trong cảm xúc lẫn hành động.' },
-            { id: 15, group: 'Major Arcana', file: '15-TheDevil.png', title: '15. The Devil', subtitle: 'Ác Quỷ', text: 'Hãy cẩn thận với những cám dỗ, thói quen xấu hoặc những mối quan hệ độc hại đang trói buộc bạn. Hôm nay là ngày để nhận ra và phá vỡ xiềng xích đó.' },
-            { id: 16, group: 'Major Arcana', file: '16-TheTower.png', title: '16. The Tower', subtitle: 'Tòa Tháp', text: 'Một sự kiện bất ngờ có thể xảy ra làm rung chuyển nền tảng của bạn. Đừng cố giữ những gì đang sụp đổ; sự dọn dẹp này là cần thiết để xây lại từ đầu vững chắc hơn.' },
-            { id: 17, group: 'Major Arcana', file: '17-TheStar.png', title: '17. The Star', subtitle: 'Ngôi Sao', text: 'Hy vọng và sự chữa lành đang đến. Vũ trụ đang lắng nghe và ủng hộ những ước mơ của bạn. Bạn đang đi đúng hướng, hãy giữ vững niềm tin.' },
-            { id: 18, group: 'Major Arcana', file: '18-TheMoon.png', title: '18. The Moon', subtitle: 'Mặt Trăng', text: 'Mọi chuyện có thể không như vẻ bề ngoài. Hôm nay đừng vội vàng quyết định, hãy chú ý đến những chi tiết bị khuất lấp và cẩn thận với sự nhầm lẫn.' },
-            { id: 19, group: 'Major Arcana', file: '19-TheSun.png', title: '19. The Sun', subtitle: 'Mặt Trời', text: 'Một ngày chói lọi, ngập tràn niềm vui, sức sống và sự rõ ràng. Những nỗ lực của bạn sẽ được đền đáp bằng thành công rực rỡ và hạnh phúc.' },
-            { id: 20, group: 'Major Arcana', file: '20-Judgement.png', title: '20. Judgement', subtitle: 'Phán Xét', text: 'Đã đến lúc thức tỉnh và đánh giá lại cuộc sống. Tiếng gọi của sự đổi mới đang vang lên, hãy tha thứ cho quá khứ và bước sang trang mới.' },
-            { id: 21, group: 'Major Arcana', file: '21-TheWorld.png', title: '21. The World', subtitle: 'Thế Giới', text: 'Một chu kỳ đã hoàn thành trọn vẹn. Bạn đã đạt được điều mình mong muốn, hãy tự hào về bản thân và tận hưởng cảm giác viên mãn này.' },
-            { id: 22, group: 'Wands', file: 'Wands01.png', title: '22. Ace of Wands', subtitle: 'Át Gậy', text: 'Một tia lửa cảm hứng mới vừa bùng lên! Hôm nay mang đến cơ hội tuyệt vời để bắt đầu một dự án đam mê hoặc một công việc mới.' },
-            { id: 23, group: 'Wands', file: 'Wands02.png', title: '23. Two of Wands', subtitle: 'Hai Gậy', text: 'Đã đến lúc lập kế hoạch lớn hơn. Bạn đang đứng trước ngã ba đường, hãy mạnh dạn mở rộng tầm nhìn và lên chiến lược cho bước tiếp theo.' },
-            { id: 24, group: 'Wands', file: 'Wands03.png', title: '24. Three of Wands', subtitle: 'Ba Gậy', text: 'Những gì bạn gieo trồng đang lớn lên. Hãy kiên nhẫn và nhìn xa trông rộng, sự chờ đợi của bạn sắp đơm hoa kết trái.' },
-            { id: 25, group: 'Wands', file: 'Wands04.png', title: '25. Four of Wands', subtitle: 'Bốn Gậy', text: 'Năng lượng của sự ăn mừng và ổn định. Hôm nay là ngày để thư giãn, tận hưởng thành quả nhỏ và quây quần bên những người thân yêu.' },
-            { id: 26, group: 'Wands', file: 'Wands05.png', title: '26. Five of Wands', subtitle: 'Năm Gậy', text: 'Có thể sẽ có chút cọ xát, tranh luận hoặc cạnh tranh nho nhỏ trong hôm nay. Hãy xem đây là cách để mài giũa ý tưởng chứ không phải cuộc chiến cá nhân.' },
-            { id: 27, group: 'Wands', file: 'Wands06.png', title: '27. Six of Wands', subtitle: 'Sáu Gậy', text: 'Chiến thắng và sự công nhận đang ở phía trước! Bạn sẽ nhận được những lời khen ngợi xứng đáng cho những nỗ lực đã bỏ ra.' },
-            { id: 28, group: 'Wands', file: 'Wands07.png', title: '28. Seven of Wands', subtitle: 'Bảy Gậy', text: 'Sẽ có người thách thức vị trí hoặc quan điểm của bạn. Hãy kiên định, tự tin giữ vững lập trường vì bạn có đủ sức mạnh để bảo vệ những gì là của mình.' },
-            { id: 29, group: 'Wands', file: 'Wands08.png', title: '29. Eight of Wands', subtitle: 'Tám Gậy', text: 'Tốc độ! Mọi thứ diễn ra rất nhanh chóng trong hôm nay. Tin tức đến dồn dập, hãy nắm bắt ngay lập tức đừng chần chừ.' },
-            { id: 30, group: 'Wands', file: 'Wands09.png', title: '30. Nine of Wands', subtitle: 'Chín Gậy', text: 'Bạn có thể cảm thấy kiệt sức, nhưng hãy ráng lên, bạn đã đến rất gần vạch đích rồi. Sự kiên trì phút chót là chìa khóa.' },
-            { id: 31, group: 'Wands', file: 'Wands10.png', title: '31. Ten of Wands', subtitle: 'Mười Gậy', text: 'Bạn đang ôm đồm quá nhiều trách nhiệm. Hôm nay, hãy học cách nói Không và san sẻ gánh nặng cho người khác trước khi bạn gục ngã.' },
-            { id: 32, group: 'Wands', file: 'Wands11.png', title: '32. Page of Wands', subtitle: 'Tiểu Đồng Gậy', text: 'Bạn sẽ nhận được một tin tức hoặc ý tưởng khiến bạn háo hức. Hãy giữ tinh thần học hỏi và tò mò.' },
-            { id: 33, group: 'Wands', file: 'Wands12.png', title: '33. Knight of Wands', subtitle: 'Hiệp Sĩ Gậy', text: 'Sự nhiệt huyết và khao khát hành động đang cháy bỏng. Tuy nhiên, hãy chắc chắn là bạn có suy nghĩ trước khi nhảy vào một cuộc phiêu lưu mới.' },
-            { id: 34, group: 'Wands', file: 'Wands13.png', title: '34. Queen of Wands', subtitle: 'Nữ Hoàng Gậy', text: 'Hãy tỏa sáng! Hôm nay bạn vô cùng quyến rũ, tự tin và tràn đầy năng lượng tích cực. Thu hút mọi người bằng sự duyên dáng của bạn.' },
-            { id: 35, group: 'Wands', file: 'Wands14.png', title: '35. King of Wands', subtitle: 'Vua Gậy', text: 'Năng lượng của một người lãnh đạo có tầm nhìn. Hãy đưa ra những quyết định mạnh mẽ và truyền cảm hứng cho những người xung quanh bạn.' },
-            { id: 36, group: 'Cups', file: 'Cups01.png', title: '36. Ace of Cups', subtitle: 'Át Cốc', text: 'Cảm xúc dâng trào và một tình yêu hoặc tình bạn mới có thể gõ cửa. Trái tim bạn đang rộng mở để đón nhận niềm vui thuần khiết.' },
-            { id: 37, group: 'Cups', file: 'Cups02.png', title: '37. Two of Cups', subtitle: 'Hai Cốc', text: 'Một sự kết nối sâu sắc, đồng điệu về mặt tâm hồn. Nếu là đối tác công việc hoặc tình yêu, đây là sự hợp tác mang lại lợi ích cho cả hai.' },
-            { id: 38, group: 'Cups', file: 'Cups03.png', title: '38. Three of Cups', subtitle: 'Ba Cốc', text: 'Hội hè và tiệc tùng! Hôm nay hãy ra ngoài, gặp gỡ bạn bè và cùng nhau ăn mừng những khoảnh khắc vui vẻ trong cuộc sống.' },
-            { id: 39, group: 'Cups', file: 'Cups04.png', title: '39. Four of Cups', subtitle: 'Bốn Cốc', text: 'Bạn đang cảm thấy nhàm chán hoặc lãnh đạm. Đừng quá chìm đắm vào suy nghĩ của bản thân mà bỏ lỡ một cơ hội tuyệt vời đang được trao ngay trước mắt.' },
-            { id: 40, group: 'Cups', file: 'Cups05.png', title: '40. Five of Cups', subtitle: 'Năm Cốc', text: 'Có sự thất vọng hoặc tiếc nuối về điều gì đó không như ý. Hãy cho phép bản thân buồn, nhưng đừng quên nhìn vào những chiếc cốc vẫn còn đứng vững bên cạnh bạn.' },
-            { id: 41, group: 'Cups', file: 'Cups06.png', title: '41. Six of Cups', subtitle: 'Sáu Cốc', text: 'Những kỷ niệm ùa về. Bạn có thể gặp lại người quen cũ hoặc tìm thấy niềm an ủi từ những điều giản dị, trong sáng của tuổi thơ.' },
-            { id: 42, group: 'Cups', file: 'Cups07.png', title: '42. Seven of Cups', subtitle: 'Bảy Cốc', text: 'Quá nhiều sự lựa chọn hoặc những giấc mơ viển vông. Hãy thực tế và chọn ra đâu là điều khả thi nhất thay vì cứ mải mê ảo tưởng.' },
-            { id: 43, group: 'Cups', file: 'Cups08.png', title: '43. Eight of Cups', subtitle: 'Tám Cốc', text: 'Đã đến lúc dũng cảm bước đi. Hôm nay, bạn nhận ra một số thứ không còn mang lại cho mình giá trị cảm xúc nữa và quyết định rời bỏ để tìm ý nghĩa cao cả hơn.' },
-            { id: 44, group: 'Cups', file: 'Cups09.png', title: '44. Nine of Cups', subtitle: 'Chín Cốc', text: 'Lá bài của những ước nguyện. Những điều bạn mong muốn về mặt tình cảm và sự hài lòng cá nhân sắp trở thành hiện thực. Hãy tận hưởng.' },
-            { id: 45, group: 'Cups', file: 'Cups10.png', title: '45. Ten of Cups', subtitle: 'Mười Cốc', text: 'Hạnh phúc gia đình viên mãn. Hôm nay là một ngày tràn ngập sự bình yên, tình yêu thương và sự gắn kết trọn vẹn với những người quan trọng nhất.' },
-            { id: 46, group: 'Cups', file: 'Cups11.png', title: '46. Page of Cups', subtitle: 'Tiểu Đồng Cốc', text: 'Một thông điệp ngọt ngào, một lời xin lỗi hoặc một trực giác mới mẻ sẽ đến với bạn. Hãy đón nhận với sự ngây thơ và cởi mở.' },
-            { id: 47, group: 'Cups', file: 'Cups12.png', title: '47. Knight of Cups', subtitle: 'Hiệp Sĩ Cốc', text: 'Một người lãng mạn mang đến những lời đường mật hoặc một lời đề nghị hấp dẫn. Hãy làm theo tiếng gọi của con tim.' },
-            { id: 48, group: 'Cups', file: 'Cups13.png', title: '48. Queen of Cups', subtitle: 'Nữ Hoàng Cốc', text: 'Sự bao dung và khả năng thấu cảm của bạn hôm nay rất cao. Hãy lắng nghe trực giác và trở thành chỗ dựa tinh thần an toàn cho ai đó.' },
-            { id: 49, group: 'Cups', file: 'Cups14.png', title: '49. King of Cups', subtitle: 'Vua Cốc', text: 'Bạn làm chủ được cảm xúc của mình một cách hoàn hảo. Hôm nay, hãy giải quyết mọi vấn đề bằng sự điềm tĩnh, ngoại giao và lòng trắc ẩn.' },
-            { id: 50, group: 'Swords', file: 'Swords01.png', title: '50. Ace of Swords', subtitle: 'Át Kiếm', text: 'Một sự thật được phơi bày hoặc một ý tưởng đột phá cắt ngang mớ bòng bong. Tư duy của bạn hôm nay cực kỳ sắc bén và sáng suốt.' },
-            { id: 51, group: 'Swords', file: 'Swords02.png', title: '51. Two of Swords', subtitle: 'Hai Kiếm', text: 'Bạn đang ở trạng thái bế tắc vì trốn tránh đưa ra quyết định. Hãy gỡ dải băng bịt mắt ra, nhìn thẳng vào sự thật và lựa chọn.' },
-            { id: 52, group: 'Swords', file: 'Swords03.png', title: '52. Three of Swords', subtitle: 'Ba Kiếm', text: 'Một sự tổn thương, lời nói gây buồn lòng hoặc nỗi đau nhỏ có thể xuất hiện. Hãy để bản thân cảm nhận nó, khóc nếu cần, rồi để nó trôi qua.' },
-            { id: 53, group: 'Swords', file: 'Swords04.png', title: '53. Four of Swords', subtitle: 'Bốn Kiếm', text: 'Tâm trí bạn cần được nghỉ ngơi. Hôm nay, hãy tạm gác lại mọi lo âu, thiền định và cho phép bộ não của mình phục hồi sau những căng thẳng.' },
-            { id: 54, group: 'Swords', file: 'Swords05.png', title: '54. Five of Swords', subtitle: 'Năm Kiếm', text: 'Một cuộc xung đột có thể xảy ra và dù thắng hay thua đều để lại vị đắng. Hãy cân nhắc xem cuộc cãi vã này có thực sự đáng để bạn đánh đổi mối quan hệ hay không.' },
-            { id: 55, group: 'Swords', file: 'Swords06.png', title: '55. Six of Swords', subtitle: 'Sáu Kiếm', text: 'Sóng gió đang dần lùi lại phía sau. Bạn đang bước vào một giai đoạn chuyển tiếp nhẹ nhàng hơn, rời xa khỏi những rắc rối tĩnh lặng tiến tới bình yên.' },
-            { id: 56, group: 'Swords', file: 'Swords07.png', title: '56. Seven of Swords', subtitle: 'Bảy Kiếm', text: 'Hãy cẩn thận với những hành động lén lút từ bạn hoặc người khác. Đôi khi, giải quyết vấn đề bằng chiến thuật và sự khôn khéo lại tốt hơn là đối đầu trực diện.' },
-            { id: 57, group: 'Swords', file: 'Swords08.png', title: '57. Eight of Swords', subtitle: 'Tám Kiếm', text: 'Bạn đang cảm thấy bế tắc và bất lực, nhưng thật ra rào cản chỉ nằm trong suy nghĩ của bạn. Bạn hoàn toàn có thể tự tháo gỡ và bước ra ngoài.' },
-            { id: 58, group: 'Swords', file: 'Swords09.png', title: '58. Nine of Swords', subtitle: 'Chín Kiếm', text: 'Đừng để sự lo lắng, sợ hãi và những viễn cảnh tồi tệ hành hạ bạn. Hầu hết những điều làm bạn mất ngủ hôm nay chỉ là do tâm trí tự thêu dệt nên.' },
-            { id: 59, group: 'Swords', file: 'Swords10.png', title: '59. Ten of Swords', subtitle: 'Mười Kiếm', text: 'Một sự kết thúc có thể đau đớn, chạm đáy sự chịu đựng. Nhưng tin vui là điểm thấp nhất đã qua, từ ngày mai, mọi thứ chỉ có thể tốt lên.' },
-            { id: 60, group: 'Swords', file: 'Swords11.png', title: '60. Page of Swords', subtitle: 'Tiểu Đồng Kiếm', text: 'Bạn sắc sảo, tò mò và tràn đầy tinh thần học hỏi. Hãy chú ý thu thập thông tin và quan sát kỹ lưỡng mọi thứ xung quanh.' },
-            { id: 61, group: 'Swords', file: 'Swords12.png', title: '61. Knight of Swords', subtitle: 'Hiệp Sĩ Kiếm', text: 'Bạn sẵn sàng lao vào hành động để bảo vệ lẽ phải hoặc ý tưởng của mình. Tuy nhiên, hãy cẩn thận đừng để sự sắc bén của mình trở thành vũ khí làm tổn thương người khác.' },
-            { id: 62, group: 'Swords', file: 'Swords13.png', title: '62. Queen of Swords', subtitle: 'Nữ Hoàng Kiếm', text: 'Lý trí vượt lên trên tình cảm. Hôm nay hãy đặt ra ranh giới rõ ràng, giao tiếp mạch lạc và đừng để bất cứ ai lừa dối bạn.' },
-            { id: 63, group: 'Swords', file: 'Swords14.png', title: '63. King of Swords', subtitle: 'Vua Kiếm', text: 'Sự công minh, logic và thẩm quyền. Đưa ra các phán quyết hoặc quyết định mang tính chiến lược, dựa trên sự phân tích lạnh lùng thay vì cảm tính.' },
-            { id: 64, group: 'Pentacles', file: 'Pentacles01.png', title: '64. Ace of Pentacles', subtitle: 'Át Tiền', text: 'Cơ hội tuyệt vời về mặt tài chính, công việc hoặc sức khỏe đang mở ra. Một hạt giống thịnh vượng vừa được gieo xuống, hãy chăm sóc nó.' },
-            { id: 65, group: 'Pentacles', file: 'Pentacles02.png', title: '65. Two of Pentacles', subtitle: 'Hai Tiền', text: 'Bạn đang phải tung hứng nhiều công việc hoặc cân bằng các khoản chi tiêu. Bạn làm rất linh hoạt, nhưng hãy cẩn thận đừng để mình bị quá tải.' },
-            { id: 66, group: 'Pentacles', file: 'Pentacles03.png', title: '66. Three of Pentacles', subtitle: 'Ba Tiền', text: 'Làm việc nhóm và hợp tác là chìa khóa thành công hôm nay. Những kỹ năng và sự đóng góp của bạn đang được cấp trên hoặc đối tác đánh giá rất cao.' },
-            { id: 67, group: 'Pentacles', file: 'Pentacles04.png', title: '67. Four of Pentacles', subtitle: 'Bốn Tiền', text: 'Bạn đang ở trạng thái an toàn về tài chính, nhưng lại bám giữ vật chất quá chặt chẽ. Hãy cẩn thận đừng để mình trở nên keo kiệt hoặc bảo thủ.' },
-            { id: 68, group: 'Pentacles', file: 'Pentacles05.png', title: '68. Five of Pentacles', subtitle: 'Năm Tiền', text: 'Cảm giác thiếu thốn về tiền bạc hoặc tinh thần. Hãy nhớ rằng sự giúp đỡ luôn ở ngay gần, chỉ cần bạn bỏ cái tôi xuống và mở miệng nhờ vả.' },
-            { id: 69, group: 'Pentacles', file: 'Pentacles06.png', title: '69. Six of Pentacles', subtitle: 'Sáu Tiền', text: 'Năng lượng của sự cân bằng trong việc cho và nhận. Bạn có thể là người rộng rãi giúp đỡ người khác hôm nay, hoặc bạn sẽ nhận được một sự hỗ trợ tài chính xứng đáng.' },
-            { id: 70, group: 'Pentacles', file: 'Pentacles07.png', title: '70. Seven of Pentacles', subtitle: 'Bảy Tiền', text: 'Sự kiên nhẫn. Bạn đã làm việc chăm chỉ và gieo hạt, giờ là lúc đứng nhìn thành quả đang dần lớn lên. Đừng vội vàng thu hoạch sớm.' },
-            { id: 71, group: 'Pentacles', file: 'Pentacles08.png', title: '71. Eight of Pentacles', subtitle: 'Tám Tiền', text: 'Tập trung cao độ vào chuyên môn. Hôm nay là ngày để làm việc chăm chỉ, chú ý vào từng tiểu tiết và rèn luyện kỹ năng của mình lên một tầm cao mới.' },
-            { id: 72, group: 'Pentacles', file: 'Pentacles09.png', title: '72. Nine of Pentacles', subtitle: 'Chín Tiền', text: 'Tự chủ, tự lập và dư dả. Hãy cho phép bản thân tự thưởng cho những nỗ lực đã qua bằng một bữa ăn ngon hoặc một món đồ chất lượng cao.' },
-            { id: 73, group: 'Pentacles', file: 'Pentacles10.png', title: '73. Ten of Pentacles', subtitle: 'Mười Tiền', text: 'Sự bền vững, gia tài và truyền thống gia đình. Hôm nay mang đến cảm giác ổn định, an toàn tuyệt đối về mặt vật chất và các giá trị lâu dài.' },
-            { id: 74, group: 'Pentacles', file: 'Pentacles11.png', title: '74. Page of Pentacles', subtitle: 'Tiểu Đồng Tiền', text: 'Một tin tức tốt lành liên quan đến tiền bạc, học tập hoặc công việc đang đến. Hãy bắt đầu hiện thực hóa mục tiêu bằng những bước đi nhỏ, vững chắc.' },
-            { id: 75, group: 'Pentacles', file: 'Pentacles12.png', title: '75. Knight of Pentacles', subtitle: 'Hiệp Sĩ Tiền', text: 'Chậm mà chắc. Hãy kiên trì hoàn thành những công việc mang tính lặp đi lặp lại. Sự đáng tin cậy và chăm chỉ của bạn là chìa khóa của hôm nay.' },
-            { id: 76, group: 'Pentacles', file: 'Pentacles13.png', title: '76. Queen of Pentacles', subtitle: 'Nữ Hoàng Tiền', text: 'Bạn là một người thực tế, đảm đang và hào phóng. Hôm nay hãy chăm lo cho không gian sống, sức khỏe và sự no ấm của bản thân lẫn gia đình.' },
-            { id: 77, group: 'Pentacles', file: 'Pentacles14.png', title: '77. King of Pentacles', subtitle: 'Vua Tiền', text: 'Một ngày tuyệt vời cho công việc kinh doanh và các quyết định tài chính lớn. Mọi thứ đang ở trong tầm kiểm soát ổn định, thịnh vượng và an toàn của bạn.' },
-            { id: 78, group: 'The Unknown', file: null, title: '78. The Blank Card', subtitle: 'Lá Bài Trắng / The Unknown', text: 'Nếu hôm nay lá bài này xuất hiện, vũ trụ đang gửi cho bạn một thông điệp vô cùng mạnh mẽ: Tương lai là một trang giấy trắng, và chiếc bút đang nằm trong tay bạn. Không có bất kỳ định mệnh nào trói buộc bạn trong ngày hôm nay. Không có phán xét, không có rào cản định trước. Bạn được trao quyền tự do ý chí một cách tuyệt đối để vẽ nên câu chuyện của chính mình. Những gì bạn hành động, quyết định và tin tưởng ngày hôm nay sẽ định hình nên thực tại. Hãy mạnh dạn sáng tạo ra phiên bản tốt nhất của ngày hôm nay!' }
+            { img: "The Fool", title: "0. The Fool (Kẻ Khờ)", text: "Hôm nay là ngày tuyệt vời để bước ra khỏi vùng an toàn. Hãy đón nhận những khởi đầu mới với tâm hồn rộng mở và đừng sợ mạo hiểm." },
+            { img: "The Magician", title: "1. The Magician (Ảo Thuật Gia)", text: "Bạn có mọi công cụ và khả năng trong tay. Hãy tập trung ý chí, hôm nay là ngày để bạn biến ý tưởng của mình thành hiện thực." },
+            { img: "The High Priestess", title: "2. The High Priestess (Nữ Tư Tế)", text: "Hãy chậm lại và lắng nghe trực giác của bạn. Câu trả lời bạn tìm kiếm không nằm ở thế giới bên ngoài, mà ở sâu thẳm bên trong bạn." },
+            { img: "The Empress", title: "3. The Empress (Hoàng Hậu)", text: "Một ngày tràn ngập năng lượng nuôi dưỡng và sinh sôi. Hãy dành thời gian chăm sóc bản thân, làm đẹp và kết nối với thiên nhiên." },
+            { img: "The Emperor", title: "4. The Emperor (Hoàng Đế)", text: "Sự kỷ luật và logic là chìa khóa. Hôm nay, hãy thiết lập các quy tắc rõ ràng, tổ chức lại công việc và tự tin nắm giữ quyền lãnh đạo." },
+            { img: "The Hierophant", title: "5. The Hierophant (Giáo Hoàng)", text: "Hãy làm theo những phương pháp truyền thống đã được kiểm chứng. Bạn có thể sẽ cần lời khuyên từ một người đi trước hoặc một cố vấn đáng tin cậy." },
+            { img: "The Lovers", title: "6. The Lovers (Tình Nhân)", text: "Năng lượng hòa hợp bao quanh bạn. Hôm nay có thể mang đến những kết nối tình cảm sâu sắc, hoặc bạn sẽ phải đưa ra một sự lựa chọn quan trọng dựa trên các giá trị của mình." },
+            { img: "The Chariot", title: "7. The Chariot (Cỗ Xe)", text: "Tập trung mục tiêu và tiến về phía trước! Sự quyết tâm và kiểm soát cảm xúc sẽ giúp bạn vượt qua mọi chướng ngại vật trong hôm nay." },
+            { img: "Strength", title: "8. Strength (Sức Mạnh)", text: "Không phải sức mạnh cơ bắp, mà là sự mềm mỏng, bao dung và lòng dũng cảm nội tâm sẽ giúp bạn 'thuần hóa' mọi khó khăn của ngày hôm nay." },
+            { img: "The Hermit", title: "9. The Hermit (Ẩn Sĩ)", text: "Đôi khi bạn cần lùi lại một bước. Hôm nay hãy dành thời gian tĩnh lặng, tách mình khỏi đám đông để suy ngẫm và nạp lại năng lượng." },
+            { img: "Wheel of Fortune", title: "10. Wheel of Fortune (Vòng Quay Số Phận)", text: "May mắn đang mỉm cười và vạn vật đang chuyển động. Hãy sẵn sàng đón nhận những thay đổi tích cực mang tính bước ngoặt." },
+            { img: "Justice", title: "11. Justice (Công Lý)", text: "Mọi thứ cần sự minh bạch và công bằng. Các quyết định bạn đưa ra hôm nay phải dựa trên sự thật và lý trí, nhân quả đang hoạt động." },
+            { img: "The Hanged Man", title: "12. The Hanged Man (Người Treo Ngược)", text: "Tạm dừng lại và buông bỏ sự bám chấp. Khi bạn thay đổi góc nhìn và ngừng cố gắng kiểm soát, một hướng đi mới sẽ sáng tỏ." },
+            { img: "Death", title: "13. Death (Tử Thần)", text: "Đừng sợ hãi, đây là sự kết thúc của một giai đoạn cũ để nhường chỗ cho những điều mới mẻ, tốt đẹp hơn. Hãy dọn dẹp những thứ không còn phục vụ bạn." },
+            { img: "Temperance", title: "14. Temperance (Tiết Chế)", text: "Giữ mọi thứ ở mức cân bằng là lời khuyên cho bạn hôm nay. Tránh mọi sự cực đoan, thái quá và tìm kiếm sự hài hòa trong cảm xúc lẫn hành động." },
+            { img: "The Devil", title: "15. The Devil (Ác Quỷ)", text: "Hãy cẩn thận với những cám dỗ, thói quen xấu hoặc những mối quan hệ độc hại đang trói buộc bạn. Hôm nay là ngày để nhận ra và phá vỡ xiềng xích đó." },
+            { img: "The Tower", title: "16. The Tower (Tòa Tháp)", text: "Một sự kiện bất ngờ có thể xảy ra làm rung chuyển nền tảng của bạn. Đừng cố giữ những gì đang sụp đổ; sự dọn dẹp này là cần thiết để xây lại từ đầu vững chắc hơn." },
+            { img: "The Star", title: "17. The Star (Ngôi Sao)", text: "Hy vọng và sự chữa lành đang đến. Vũ trụ đang lắng nghe và ủng hộ những ước mơ của bạn. Bạn đang đi đúng hướng, hãy giữ vững niềm tin." },
+            { img: "The Moon", title: "18. The Moon (Mặt Trăng)", text: "Mọi chuyện có thể không như vẻ bề ngoài. Hôm nay đừng vội vàng quyết định, hãy chú ý đến những chi tiết bị khuất lấp và cẩn thận với sự nhầm lẫn." },
+            { img: "The Sun", title: "19. The Sun (Mặt Trời)", text: "Một ngày chói lọi, ngập tràn niềm vui, sức sống và sự rõ ràng. Những nỗ lực của bạn sẽ được đền đáp bằng thành công rực rỡ và hạnh phúc." },
+            { img: "Judgement", title: "20. Judgement (Phán Xét)", text: "Đã đến lúc thức tỉnh và đánh giá lại cuộc sống. Tiếng gọi của sự đổi mới đang vang lên, hãy tha thứ cho quá khứ và bước sang trang mới." },
+            { img: "The World", title: "21. The World (Thế Giới)", text: "Một chu kỳ đã hoàn thành trọn vẹn. Bạn đã đạt được điều mình mong muốn, hãy tự hào về bản thân và tận hưởng cảm giác viên mãn này." },
+            { img: "Ace of Wands", title: "22. Ace of Wands", text: "Một tia lửa cảm hứng mới vừa bùng lên! Hôm nay mang đến cơ hội tuyệt vời để bắt đầu một dự án đam mê hoặc một công việc mới." },
+            { img: "Two of Wands", title: "23. Two of Wands", text: "Đã đến lúc lập kế hoạch lớn hơn. Bạn đang đứng trước ngã ba đường, hãy mạnh dạn mở rộng tầm nhìn và lên chiến lược cho bước tiếp theo." },
+            { img: "Three of Wands", title: "24. Three of Wands", text: "Những gì bạn gieo trồng đang lớn lên. Hãy kiên nhẫn và nhìn xa trông rộng, sự chờ đợi của bạn sắp đơm hoa kết trái." },
+            { img: "Four of Wands", title: "25. Four of Wands", text: "Năng lượng của sự ăn mừng và ổn định. Hôm nay là ngày để thư giãn, tận hưởng thành quả nhỏ và quây quần bên những người thân yêu." },
+            { img: "Five of Wands", title: "26. Five of Wands", text: "Có thể sẽ có chút cọ xát, tranh luận hoặc cạnh tranh nho nhỏ trong hôm nay. Hãy xem đây là cách để mài giũa ý tưởng chứ không phải cuộc chiến cá nhân." },
+            { img: "Six of Wands", title: "27. Six of Wands", text: "Chiến thắng và sự công nhận đang ở phía trước! Bạn sẽ nhận được những lời khen ngợi xứng đáng cho những nỗ lực đã bỏ ra." },
+            { img: "Seven of Wands", title: "28. Seven of Wands", text: "Sẽ có người thách thức vị trí hoặc quan điểm của bạn. Hãy kiên định, tự tin giữ vững lập trường vì bạn có đủ sức mạnh để bảo vệ những gì là của mình." },
+            { img: "Eight of Wands", title: "29. Eight of Wands", text: "Tốc độ! Mọi thứ diễn ra rất nhanh chóng trong hôm nay. Tin tức đến dồn dập, hãy nắm bắt ngay lập tức đừng chần chừ." },
+            { img: "Nine of Wands", title: "30. Nine of Wands", text: "Bạn có thể cảm thấy kiệt sức, nhưng hãy ráng lên, bạn đã đến rất gần vạch đích rồi. Sự kiên trì phút chót là chìa khóa." },
+            { img: "Ten of Wands", title: "31. Ten of Wands", text: "Bạn đang ôm đồm quá nhiều trách nhiệm. Hôm nay, hãy học cách nói 'Không' và san sẻ gánh nặng cho người khác trước khi bạn gục ngã." },
+            { img: "Page of Wands", title: "32. Page of Wands", text: "Bạn sẽ nhận được một tin tức hoặc ý tưởng khiến bạn háo hức. Hãy giữ tinh thần học hỏi và tò mò." },
+            { img: "Knight of Wands", title: "33. Knight of Wands", text: "Sự nhiệt huyết và khao khát hành động đang cháy bỏng. Tuy nhiên, hãy chắc chắn là bạn có suy nghĩ trước khi 'nhảy' vào một cuộc phiêu lưu mới." },
+            { img: "Queen of Wands", title: "34. Queen of Wands", text: "Hãy tỏa sáng! Hôm nay bạn vô cùng quyến rũ, tự tin và tràn đầy năng lượng tích cực. Thu hút mọi người bằng sự duyên dáng của bạn." },
+            { img: "King of Wands", title: "35. King of Wands", text: "Năng lượng của một người lãnh đạo có tầm nhìn. Hãy đưa ra những quyết định mạnh mẽ và truyền cảm hứng cho những người xung quanh bạn." },
+            { img: "Ace of Cups", title: "36. Ace of Cups", text: "Cảm xúc dâng trào và một tình yêu/tình bạn mới có thể gõ cửa. Trái tim bạn đang rộng mở để đón nhận niềm vui thuần khiết." },
+            { img: "Two of Cups", title: "37. Two of Cups", text: "Một sự kết nối sâu sắc, đồng điệu về mặt tâm hồn. Nếu là đối tác công việc hoặc tình yêu, đây là sự hợp tác mang lại lợi ích cho cả hai." },
+            { img: "Three of Cups", title: "38. Three of Cups", text: "Hội hè và tiệc tùng! Hôm nay hãy ra ngoài, gặp gỡ bạn bè và cùng nhau ăn mừng những khoảnh khắc vui vẻ trong cuộc sống." },
+            { img: "Four of Cups", title: "39. Four of Cups", text: "Bạn đang cảm thấy nhàm chán hoặc lãnh đạm. Đừng quá chìm đắm vào suy nghĩ của bản thân mà bỏ lỡ một cơ hội tuyệt vời đang được trao ngay trước mắt." },
+            { img: "Five of Cups", title: "40. Five of Cups", text: "Có sự thất vọng hoặc tiếc nuối về điều gì đó không như ý. Hãy cho phép bản thân buồn, nhưng đừng quên nhìn vào những 'chiếc cốc' vẫn còn đứng vững bên cạnh bạn." },
+            { img: "Six of Cups", title: "41. Six of Cups", text: "Những kỷ niệm ùa về. Bạn có thể gặp lại người quen cũ hoặc tìm thấy niềm an ủi từ những điều giản dị, trong sáng của tuổi thơ." },
+            { img: "Seven of Cups", title: "42. Seven of Cups", text: "Quá nhiều sự lựa chọn hoặc những giấc mơ viển vông. Hãy thực tế và chọn ra đâu là điều khả thi nhất thay vì cứ mải mê ảo tưởng." },
+            { img: "Eight of Cups", title: "43. Eight of Cups", text: "Đã đến lúc dũng cảm bước đi. Hôm nay, bạn nhận ra một số thứ không còn mang lại cho mình giá trị cảm xúc nữa và quyết định rời bỏ để tìm ý nghĩa cao cả hơn." },
+            { img: "Nine of Cups", title: "44. Nine of Cups", text: "'Lá bài của những ước nguyện'. Những điều bạn mong muốn về mặt tình cảm và sự hài lòng cá nhân sắp trở thành hiện thực. Hãy tận hưởng." },
+            { img: "Ten of Cups", title: "45. Ten of Cups", text: "Hạnh phúc gia đình viên mãn. Hôm nay là một ngày tràn ngập sự bình yên, tình yêu thương và sự gắn kết trọn vẹn với những người quan trọng nhất." },
+            { img: "Page of Cups", title: "46. Page of Cups", text: "Một thông điệp ngọt ngào, một lời xin lỗi hoặc một trực giác mới mẻ sẽ đến với bạn. Hãy đón nhận với sự ngây thơ và cởi mở." },
+            { img: "Knight of Cups", title: "47. Knight of Cups", text: "Một người lãng mạn mang đến những lời đường mật hoặc một lời đề nghị hấp dẫn. Hãy làm theo tiếng gọi của con tim." },
+            { img: "Queen of Cups", title: "48. Queen of Cups", text: "Sự bao dung và khả năng thấu cảm của bạn hôm nay rất cao. Hãy lắng nghe trực giác và trở thành chỗ dựa tinh thần an toàn cho ai đó." },
+            { img: "King of Cups", title: "49. King of Cups", text: "Bạn làm chủ được cảm xúc của mình một cách hoàn hảo. Hôm nay, hãy giải quyết mọi vấn đề bằng sự điềm tĩnh, ngoại giao và lòng trắc ẩn." },
+            { img: "Ace of Swords", title: "50. Ace of Swords", text: "Một sự thật được phơi bày hoặc một ý tưởng đột phá cắt ngang mớ bòng bong. Tư duy của bạn hôm nay cực kỳ sắc bén và sáng suốt." },
+            { img: "Two of Swords", title: "51. Two of Swords", text: "Bạn đang ở trạng thái bế tắc vì trốn tránh đưa ra quyết định. Hãy gỡ dải băng bịt mắt ra, nhìn thẳng vào sự thật và lựa chọn." },
+            { img: "Three of Swords", title: "52. Three of Swords", text: "Một sự tổn thương, lời nói gây buồn lòng hoặc nỗi đau nhỏ có thể xuất hiện. Hãy để bản thân cảm nhận nó, khóc nếu cần, rồi để nó trôi qua." },
+            { img: "Four of Swords", title: "53. Four of Swords", text: "Tâm trí bạn cần được nghỉ ngơi. Hôm nay, hãy tạm gác lại mọi lo âu, thiền định và cho phép bộ não của mình phục hồi sau những căng thẳng." },
+            { img: "Five of Swords", title: "54. Five of Swords", text: "Một cuộc xung đột có thể xảy ra và dù thắng hay thua đều để lại vị đắng. Hãy cân nhắc xem cuộc cãi vã này có thực sự đáng để bạn đánh đổi mối quan hệ hay không." },
+            { img: "Six of Swords", title: "55. Six of Swords", text: "Sóng gió đang dần lùi lại phía sau. Bạn đang bước vào một giai đoạn chuyển tiếp nhẹ nhàng hơn, rời xa khỏi những rắc rối tĩnh lặng tiến tới bình yên." },
+            { img: "Seven of Swords", title: "56. Seven of Swords", text: "Hãy cẩn thận với những hành động lén lút (từ bạn hoặc người khác). Đôi khi, giải quyết vấn đề bằng chiến thuật và sự khôn khéo lại tốt hơn là đối đầu trực diện." },
+            { img: "Eight of Swords", title: "57. Eight of Swords", text: "Bạn đang cảm thấy bế tắc và bất lực, nhưng thật ra rào cản chỉ nằm trong suy nghĩ của bạn. Bạn hoàn toàn có thể tự tháo gỡ và bước ra ngoài." },
+            { img: "Nine of Swords", title: "58. Nine of Swords", text: "Đừng để sự lo lắng, sợ hãi và những viễn cảnh tồi tệ hành hạ bạn. Hầu hết những điều làm bạn mất ngủ hôm nay chỉ là do tâm trí tự thêu dệt nên." },
+            { img: "Ten of Swords", title: "59. Ten of Swords", text: "Một sự kết thúc có thể đau đớn, chạm đáy sự chịu đựng. Nhưng tin vui là điểm thấp nhất đã qua, từ ngày mai, mọi thứ chỉ có thể tốt lên." },
+            { img: "Page of Swords", title: "60. Page of Swords", text: "Bạn sắc sảo, tò mò và tràn đầy tinh thần học hỏi. Hãy chú ý thu thập thông tin và quan sát kỹ lưỡng mọi thứ xung quanh." },
+            { img: "Knight of Swords", title: "61. Knight of Swords", text: "Bạn sẵn sàng lao vào hành động để bảo vệ lẽ phải hoặc ý tưởng của mình. Tuy nhiên, hãy cẩn thận đừng để sự sắc bén của mình trở thành vũ khí làm tổn thương người khác." },
+            { img: "Queen of Swords", title: "62. Queen of Swords", text: "Lý trí vượt lên trên tình cảm. Hôm nay hãy đặt ra ranh giới rõ ràng, giao tiếp mạch lạc và đừng để bất cứ ai lừa dối bạn." },
+            { img: "King of Swords", title: "63. King of Swords", text: "Sự công minh, logic và thẩm quyền. Đưa ra các phán quyết hoặc quyết định mang tính chiến lược, dựa trên sự phân tích lạnh lùng thay vì cảm tính." },
+            { img: "Ace of Pentacles", title: "64. Ace of Pentacles", text: "Cơ hội tuyệt vời về mặt tài chính, công việc hoặc sức khỏe đang mở ra. Một hạt giống thịnh vượng vừa được gieo xuống, hãy chăm sóc nó." },
+            { img: "Two of Pentacles", title: "65. Two of Pentacles", text: "Bạn đang phải tung hứng nhiều công việc hoặc cân bằng các khoản chi tiêu. Bạn làm rất linh hoạt, nhưng hãy cẩn thận đừng để mình bị quá tải." },
+            { img: "Three of Pentacles", title: "66. Three of Pentacles", text: "Làm việc nhóm và hợp tác là chìa khóa thành công hôm nay. Những kỹ năng và sự đóng góp của bạn đang được cấp trên hoặc đối tác đánh giá rất cao." },
+            { img: "Four of Pentacles", title: "67. Four of Pentacles", text: "Bạn đang ở trạng thái an toàn về tài chính, nhưng lại bám giữ vật chất quá chặt chẽ. Hãy cẩn thận đừng để mình trở nên keo kiệt hoặc bảo thủ." },
+            { img: "Five of Pentacles", title: "68. Five of Pentacles", text: "Cảm giác thiếu thốn về tiền bạc hoặc tinh thần. Hãy nhớ rằng sự giúp đỡ luôn ở ngay gần, chỉ cần bạn bỏ cái tôi xuống và mở miệng nhờ vả." },
+            { img: "Six of Pentacles", title: "69. Six of Pentacles", text: "Năng lượng của sự cân bằng trong việc cho và nhận. Bạn có thể là người rộng rãi giúp đỡ người khác hôm nay, hoặc bạn sẽ nhận được một sự hỗ trợ tài chính xứng đáng." },
+            { img: "Seven of Pentacles", title: "70. Seven of Pentacles", text: "Sự kiên nhẫn. Bạn đã làm việc chăm chỉ và gieo hạt, giờ là lúc đứng nhìn thành quả đang dần lớn lên. Đừng vội vàng thu hoạch sớm." },
+            { img: "Eight of Pentacles", title: "71. Eight of Pentacles", text: "Tập trung cao độ vào chuyên môn. Hôm nay là ngày để làm việc chăm chỉ, chú ý vào từng tiểu tiết và rèn luyện kỹ năng của mình lên một tầm cao mới." },
+            { img: "Nine of Pentacles", title: "72. Nine of Pentacles", text: "Tự chủ, tự lập và dư dả. Hãy cho phép bản thân tự thưởng cho những nỗ lực đã qua bằng một bữa ăn ngon hoặc một món đồ chất lượng cao." },
+            { img: "Ten of Pentacles", title: "73. Ten of Pentacles", text: "Sự bền vững, gia tài và truyền thống gia đình. Hôm nay mang đến cảm giác ổn định, an toàn tuyệt đối về mặt vật chất và các giá trị lâu dài." },
+            { img: "Page of Pentacles", title: "74. Page of Pentacles", text: "Một tin tức tốt lành liên quan đến tiền bạc, học tập hoặc công việc đang đến. Hãy bắt đầu hiện thực hóa mục tiêu bằng những bước đi nhỏ, vững chắc." },
+            { img: "Knight of Pentacles", title: "75. Knight of Pentacles", text: "'Chậm mà chắc'. Hãy kiên trì hoàn thành những công việc mang tính lặp đi lặp lại. Sự đáng tin cậy và chăm chỉ của bạn là chìa khóa của hôm nay." },
+            { img: "Queen of Pentacles", title: "76. Queen of Pentacles", text: "Bạn là một người thực tế, đảm đang và hào phóng. Hôm nay hãy chăm lo cho không gian sống, sức khỏe và sự no ấm của bản thân lẫn gia đình." },
+            { img: "King of Pentacles", title: "77. King of Pentacles", text: "Một ngày tuyệt vời cho công việc kinh doanh và các quyết định tài chính lớn. Mọi thứ đang ở trong tầm kiểm soát ổn định, thịnh vượng và an toàn của bạn." }
         ];
+
+        const TAROT_BASE_URL = "https://cdn.jsdelivr.net/gh/SuperAgento/Student-survey@main/Cards-png/";
+        const FALLBACK_TAROT_IMG = "https://via.placeholder.com/200x350/1e293b/fcd34d?text=Tarot+Card";
 
         function showRandomTarotCard() {
             const randomIndex = Math.floor(Math.random() * tarotData.length);
             const card = tarotData[randomIndex];
 
             const tarotImg = document.getElementById('tarot-img');
-            const blankCard = document.getElementById('tarot-blank-card');
-            document.getElementById('tarot-number').textContent = `Lá bài #${card.id}`;
-            document.getElementById('tarot-group').textContent = `Nhóm: ${card.group}`;
-            document.getElementById('tarot-title').textContent = card.title;
-            document.getElementById('tarot-subtitle').textContent = card.subtitle;
-            document.getElementById('tarot-desc').textContent = card.text;
+            const tarotTitle = document.getElementById('tarot-title');
+            const tarotDesc = document.getElementById('tarot-desc');
 
-            if (card.file) {
-                tarotImg.src = TAROT_BASE + card.file;
-                tarotImg.classList.remove('hidden');
-                blankCard.classList.add('hidden');
-            } else {
-                tarotImg.src = '';
-                tarotImg.classList.add('hidden');
-                blankCard.classList.remove('hidden');
-            }
+            tarotTitle.textContent = card.title;
+            tarotDesc.textContent = card.text;
+
+            const fileBase = encodeURIComponent(card.img);
+            const candidates = [
+                `${TAROT_BASE_URL}${fileBase}.png`,
+                `${TAROT_BASE_URL}${fileBase}.jpg`,
+                `${TAROT_BASE_URL}${fileBase}.jpeg`,
+                `${TAROT_BASE_URL}${fileBase}.webp`
+            ];
+
+            let currentIndex = 0;
+
+            tarotImg.onerror = function () {
+                currentIndex++;
+                if (currentIndex < candidates.length) {
+                    tarotImg.src = candidates[currentIndex];
+                } else {
+                    tarotImg.onerror = null;
+                    tarotImg.src = FALLBACK_TAROT_IMG;
+                }
+            };
+
+            tarotImg.src = candidates[currentIndex];
         }
 
         const likertOptions = [
-            { val: 1, text: 'Hoàn toàn không đồng ý', bg: 'peer-checked:bg-red-500 peer-checked:border-red-500' },
-            { val: 2, text: 'Không đồng ý', bg: 'peer-checked:bg-orange-400 peer-checked:border-orange-400' },
-            { val: 3, text: 'Trung lập', bg: 'peer-checked:bg-blue-400 peer-checked:border-blue-400' },
-            { val: 4, text: 'Đồng ý', bg: 'peer-checked:bg-green-400 peer-checked:border-green-400' },
-            { val: 5, text: 'Hoàn toàn đồng ý', bg: 'peer-checked:bg-green-600 peer-checked:border-green-600' }
+            { val: 1, text: "Hoàn toàn không đồng ý", bg: "peer-checked:bg-red-500 peer-checked:border-red-500" },
+            { val: 2, text: "Không đồng ý", bg: "peer-checked:bg-orange-400 peer-checked:border-orange-400" },
+            { val: 3, text: "Trung lập", bg: "peer-checked:bg-blue-400 peer-checked:border-blue-400" },
+            { val: 4, text: "Đồng ý", bg: "peer-checked:bg-green-400 peer-checked:border-green-400" },
+            { val: 5, text: "Hoàn toàn đồng ý", bg: "peer-checked:bg-green-600 peer-checked:border-green-600" }
         ];
 
         const p2Questions = [
-            'Câu 6. Tôi thường xuyên lựa chọn mua trước trả sau khi mua hàng trên sàn thương mại điện tử.',
-            'Câu 7. Trong một số trường hợp, tôi ưu tiên mua trước trả sau hơn thanh toán toàn bộ ngay tại thời điểm mua.',
-            'Câu 8. Tôi có xu hướng tiếp tục sử dụng mua trước trả sau trong các lần mua sắm trực tuyến sau.',
-            'Câu 9. Tôi dành một phần đáng kể trong ngân sách sinh hoạt hàng tháng để trả nợ cho các khoản mua trước trả sau.',
-            'Câu 10. Nếu không có dịch vụ mua trước trả sau, tôi sẽ phải hủy bỏ hoặc hoãn lại nhiều dự định mua sắm của mình.',
-            'Câu 11. Tôi có thói quen sử dụng dịch vụ mua trước trả sau trên nhiều ứng dụng và nền tảng thương mại điện tử khác nhau cùng lúc.'
+            "Câu 6. Tôi thường xuyên lựa chọn mua trước trả sau khi mua hàng trên sàn thương mại điện tử.",
+            "Câu 7. Trong một số trường hợp, tôi ưu tiên mua trước trả sau hơn thanh toán toàn bộ ngay tại thời điểm mua.",
+            "Câu 8. Tôi có xu hướng tiếp tục sử dụng mua trước trả sau trong các lần mua sắm trực tuyến sau.",
+            "Câu 9. Tôi dành một phần đáng kể trong ngân sách sinh hoạt hàng tháng để trả nợ cho các khoản mua trước trả sau.",
+            "Câu 10. Nếu không có dịch vụ mua trước trả sau, tôi sẽ phải hủy bỏ hoặc hoãn lại nhiều dự định mua sắm của mình.",
+            "Câu 11. Tôi có thói quen sử dụng dịch vụ mua trước trả sau trên nhiều ứng dụng và nền tảng thương mại điện tử khác nhau cùng lúc."
         ];
 
         const p3Questions = [
-            'Câu 12. Tôi thấy mua trước trả sau là hình thức thanh toán dễ sử dụng khi mua sắm trên sàn thương mại điện tử.',
-            'Câu 13. Mua trước trả sau giúp quá trình mua hàng của tôi trở nên thuận tiện hơn.',
-            'Câu 14. Mua trước trả sau giúp tôi ra quyết định mua hàng nhanh hơn.',
-            'Câu 15. Tôi thấy mua trước trả sau là một hình thức thanh toán hấp dẫn đối với sinh viên.',
-            'Câu 16. Mua trước trả sau khiến tôi cảm thấy ít áp lực hơn vì chưa phải thanh toán toàn bộ ngay tại thời điểm mua hàng.',
-            'Câu 17. Quá trình đăng ký tài khoản và xét duyệt hồ sơ mua trước trả sau diễn ra nhanh chóng và không đòi hỏi nhiều thủ tục phức tạp.',
-            'Câu 18. Các mã giảm giá và ưu đãi độc quyền dành riêng cho phương thức mua trước trả sau rất hấp dẫn đối với tôi.',
-            'Câu 19. Giao diện của các ứng dụng mua trước trả sau giúp tôi dễ dàng theo dõi lịch sử mua sắm và các kỳ hạn cần thanh toán.'
+            "Câu 12. Tôi thấy mua trước trả sau là hình thức thanh toán dễ sử dụng khi mua sắm trên sàn thương mại điện tử.",
+            "Câu 13. Mua trước trả sau giúp quá trình mua hàng của tôi trở nên thuận tiện hơn.",
+            "Câu 14. Mua trước trả sau giúp tôi ra quyết định mua hàng nhanh hơn.",
+            "Câu 15. Tôi thấy mua trước trả sau là một hình thức thanh toán hấp dẫn đối với sinh viên.",
+            "Câu 16. Mua trước trả sau khiến tôi cảm thấy ít áp lực hơn vì chưa phải thanh toán toàn bộ ngay tại thời điểm mua hàng.",
+            "Câu 17. Quá trình đăng ký tài khoản và xét duyệt hồ sơ mua trước trả sau diễn ra nhanh chóng và không đòi hỏi nhiều thủ tục phức tạp.",
+            "Câu 18. Các mã giảm giá và ưu đãi độc quyền dành riêng cho phương thức mua trước trả sau rất hấp dẫn đối với tôi.",
+            "Câu 19. Giao diện của các ứng dụng mua trước trả sau giúp tôi dễ dàng theo dõi lịch sử mua sắm và các kỳ hạn cần thanh toán."
         ];
 
         const p4Questions = [
-            'Câu 20. Mua trước trả sau khiến tôi dễ mua hàng ngoài kế hoạch hơn.',
-            'Câu 21. Khi có mua trước trả sau, tôi có xu hướng chi tiêu nhiều hơn dự kiến ban đầu.',
-            'Câu 22. Mua trước trả sau khiến tôi dễ mua hàng ngay cả khi tại thời điểm đó tôi chưa đủ khả năng chi trả.',
-            'Câu 23. Mua trước trả sau khiến tôi dễ phát sinh các khoản chi không thật sự cần thiết.',
-            'Câu 24. Mua trước trả sau làm tôi ít cân nhắc hơn về khả năng chi trả thực tế của bản thân trước khi mua hàng.',
-            'Câu 25. Sự hỗ trợ của mua trước trả sau thôi thúc tôi mua những món hàng đắt tiền mà bình thường tôi sẽ không dám mua.',
-            'Câu 26. Tôi thường có xu hướng tìm mua thêm đồ chỉ vì nhận thấy hạn mức mua trước trả sau của mình trên ứng dụng vẫn còn nhiều.',
-            'Câu 27. Việc chia nhỏ khoản thanh toán làm tôi có cảm giác rằng chi phí thực tế của món hàng đó rẻ hơn so với giá trị thực.'
+            "Câu 20. Mua trước trả sau khiến tôi dễ mua hàng ngoài kế hoạch hơn.",
+            "Câu 21. Khi có mua trước trả sau, tôi có xu hướng chi tiêu nhiều hơn dự kiến ban đầu.",
+            "Câu 22. Mua trước trả sau khiến tôi dễ mua hàng ngay cả khi tại thời điểm đó tôi chưa đủ khả năng chi trả.",
+            "Câu 23. Mua trước trả sau khiến tôi dễ phát sinh các khoản chi không thật sự cần thiết.",
+            "Câu 24. Mua trước trả sau làm tôi ít cân nhắc hơn về khả năng chi trả thực tế của bản thân trước khi mua hàng.",
+            "Câu 25. Sự hỗ trợ của mua trước trả sau thôi thúc tôi mua những món hàng đắt tiền mà bình thường tôi sẽ không dám mua.",
+            "Câu 26. Tôi thường có xu hướng tìm mua thêm đồ chỉ vì nhận thấy hạn mức mua trước trả sau của mình trên ứng dụng vẫn còn nhiều.",
+            "Câu 27. Việc chia nhỏ khoản thanh toán làm tôi có cảm giác rằng chi phí thực tế của món hàng đó rẻ hơn so với giá trị thực."
         ];
 
         const p5Questions = [
-            'Câu 28. Tôi lập kế hoạch chi tiêu cho bản thân theo tháng hoặc theo tuần.',
-            'Câu 29. Tôi theo dõi sát sao các khoản thu nhập và chi tiêu cá nhân của mình.',
-            'Câu 30. Tôi cố gắng kiểm soát mọi khoản chi tiêu nằm trong phạm vi ngân sách bản thân đã đề ra.',
-            'Câu 31. Tôi có thói quen trích ra một phần thu nhập để tiết kiệm trước khi bắt đầu chi tiêu.',
-            'Câu 32. Tôi luôn đảm bảo thanh toán các hóa đơn và khoản nợ cần thiết đúng kỳ hạn.',
-            'Câu 33. Tôi luôn duy trì một khoản tiền dự phòng riêng để ứng phó với những trường hợp khẩn cấp.',
-            'Câu 34. Tôi thường xuyên so sánh giá cả ở nhiều cửa hàng hoặc nền tảng khác nhau trước khi quyết định mua một món đồ.',
-            'Câu 35. Tôi sẽ lập tức cắt giảm các khoản chi tiêu giải trí không cần thiết nếu nhận thấy ngân sách tháng này đang bị thâm hụt.'
+            "Câu 28. Tôi lập kế hoạch chi tiêu cho bản thân theo tháng hoặc theo tuần.",
+            "Câu 29. Tôi theo dõi sát sao các khoản thu nhập và chi tiêu cá nhân của mình.",
+            "Câu 30. Tôi cố gắng kiểm soát mọi khoản chi tiêu nằm trong phạm vi ngân sách bản thân đã đề ra.",
+            "Câu 31. Tôi có thói quen trích ra một phần thu nhập để tiết kiệm trước khi bắt đầu chi tiêu.",
+            "Câu 32. Tôi luôn đảm bảo thanh toán các hóa đơn và khoản nợ cần thiết đúng kỳ hạn.",
+            "Câu 33. Tôi luôn duy trì một khoản tiền dự phòng riêng để ứng phó với những trường hợp khẩn cấp.",
+            "Câu 34. Tôi thường xuyên so sánh giá cả ở nhiều cửa hàng hoặc nền tảng khác nhau trước khi quyết định mua một món đồ.",
+            "Câu 35. Tôi sẽ lập tức cắt giảm các khoản chi tiêu giải trí không cần thiết nếu nhận thấy ngân sách tháng này đang bị thâm hụt."
         ];
 
         function renderLikert(containerId, questions, startQNumber) {
@@ -558,9 +611,26 @@
         renderLikert('likert-container-4', p4Questions, 20);
         renderLikert('likert-container-5', p5Questions, 28);
 
+        // TỰ ĐỘNG ĐIỀN PHẦN 2 KHI CHỌN "KHÔNG"
+        function autoFillPart2WhenNo() {
+            document.addEventListener('change', function (e) {
+                if (e.target && e.target.name === 'q5' && e.target.value === '1' && e.target.checked) {
+                    for (let q = 6; q <= 11; q++) {
+                        const target = document.querySelector(`input[name="q${q}"][value="2"]`);
+                        if (target) {
+                            target.checked = true;
+                        }
+                    }
+                }
+            });
+        }
+
+        autoFillPart2WhenNo();
+
         const landingView = document.getElementById('landing-view');
         const surveyView = document.getElementById('survey-view');
         const thankYouView = document.getElementById('thank-you-view');
+
         const startBtns = [document.getElementById('startSurveyBtnHeader'), document.getElementById('startSurveyBtnHero')];
         const backHomeBtn = document.getElementById('backHomeBtn');
         const returnHomeBtn = document.getElementById('returnHomeBtn');
@@ -615,10 +685,13 @@
             e.preventDefault();
             const submitBtn = document.getElementById('submitTuViBtn');
             const originalText = submitBtn.innerHTML;
+
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
-            submitBtn.innerHTML = 'Đang gửi yêu cầu...';
+            submitBtn.innerHTML = `Đang gửi yêu cầu...`;
+
             const formData = new FormData(tuviForm);
+
             fetch(TUVI_SCRIPT_URL, {
                 method: 'POST',
                 body: formData,
@@ -640,6 +713,7 @@
             thankYouView.classList.add('hidden');
             landingView.classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
             setTimeout(() => {
                 tuviSuccessMsg.classList.add('hidden');
                 tarotResultSection.classList.remove('hidden');
@@ -650,11 +724,11 @@
         let currentStep = 1;
         const totalSteps = 5;
         const stepTitles = [
-            'Thông tin cá nhân',
-            'Mức độ sử dụng BNPL',
-            'Tính tiện lợi & Hấp dẫn',
-            'Xu hướng chi tiêu',
-            'Quản lý tài chính'
+            "Thông tin cá nhân",
+            "Mức độ sử dụng BNPL",
+            "Tính tiện lợi & Hấp dẫn",
+            "Xu hướng chi tiêu",
+            "Quản lý tài chính"
         ];
 
         const prevBtn = document.getElementById('prevBtn');
@@ -668,8 +742,11 @@
             document.querySelectorAll('.step-content').forEach(el => el.classList.add('hidden'));
             document.getElementById(`step-${step}`).classList.remove('hidden');
 
-            if (step === 1) prevBtn.classList.add('hidden');
-            else prevBtn.classList.remove('hidden');
+            if (step === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
 
             if (step === totalSteps) {
                 nextBtn.classList.add('hidden');
@@ -711,10 +788,13 @@
         });
 
         const form = document.getElementById('customSurveyForm');
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+
             const now = new Date();
             document.getElementById('timestamp').value = now.toLocaleString('vi-VN');
+
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
             const originalText = submitBtn.innerHTML;
@@ -725,28 +805,37 @@
                 </svg>
                 Đang gửi dữ liệu...
             `;
+
             const formData = new FormData(form);
+
             fetch(SURVEY_SCRIPT_URL, {
                 method: 'POST',
                 body: formData,
                 mode: 'no-cors'
-            }).then(() => {
+            })
+            .then(() => {
                 form.reset();
                 currentStep = 1;
                 updateStepUI(currentStep);
+
                 surveyView.classList.add('hidden');
                 thankYouView.classList.remove('hidden');
                 window.scrollTo(0, 0);
+
                 showRandomTarotCard();
-            }).catch(error => {
+            })
+            .catch(error => {
                 console.error('Lỗi gửi biểu mẫu:', error);
                 alert('Có lỗi xảy ra trong quá trình gửi. Vui lòng thử lại sau.');
-            }).finally(() => {
+            })
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
                 submitBtn.innerHTML = originalText;
             });
         });
+
+        updateStepUI(currentStep);
     </script>
 </body>
 </html>
