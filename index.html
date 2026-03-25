@@ -55,7 +55,6 @@
 </head>
 <body class="font-sans text-gray-800 bg-slate-50 antialiased selection:bg-blue-200 selection:text-blue-900">
 
-    <!-- ===== MÀN HÌNH TRANG CHỦ ===== -->
     <div id="landing-view" class="transition-opacity duration-300 flex flex-col min-h-screen">
         <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
@@ -114,7 +113,6 @@
         </footer>
     </div>
 
-    <!-- ===== MÀN HÌNH KHẢO SÁT ===== -->
     <div id="survey-view" class="hidden min-h-screen bg-slate-50 flex flex-col">
         <div class="bg-white shadow-sm sticky top-0 z-50">
             <div class="max-w-4xl mx-auto px-4 py-3 sm:py-4 flex justify-between items-center">
@@ -152,7 +150,6 @@
                     <form id="customSurveyForm" class="space-y-8">
                         <input type="hidden" name="timestamp" id="timestamp">
 
-                        <!-- ================= PHẦN 1 ================= -->
                         <div id="step-1" class="step-content">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 1. THÔNG TIN CÁ NHÂN</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 mb-6 border border-blue-100">
@@ -211,7 +208,6 @@
                             </div>
                         </div>
 
-                        <!-- ================= PHẦN 2 ================= -->
                         <div id="step-2" class="step-content hidden">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 2. MỨC ĐỘ SỬ DỤNG BNPL</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
@@ -244,7 +240,6 @@
                             <div id="likert-container-2" class="space-y-4 sm:space-y-6"></div>
                         </div>
 
-                        <!-- ================= PHẦN 3 ================= -->
                         <div id="step-3" class="step-content hidden">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 3. TÍNH TIỆN LỢI VÀ HẤP DẪN</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
@@ -256,7 +251,6 @@
                             <div id="likert-container-3" class="space-y-4 sm:space-y-6"></div>
                         </div>
 
-                        <!-- ================= PHẦN 4 ================= -->
                         <div id="step-4" class="step-content hidden">
                             <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 4. XU HƯỚNG CHI TIÊU PHÁT SINH</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
@@ -268,9 +262,8 @@
                             <div id="likert-container-4" class="space-y-4 sm:space-y-6"></div>
                         </div>
 
-                        <!-- ================= PHẦN 5 ================= -->
                         <div id="step-5" class="step-content hidden">
-                            <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 5. QUẢN LÝ TÀI CHÍNH CÁ NHÂN</h3>
+                            <h3 class="text-lg sm:text-2xl font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">PHẦN 5. QUẢN LÝ TÀI CHÍNH CÁরাপ CHÂN</h3>
                             <div class="bg-blue-50/80 rounded-xl p-4 sm:p-5 mb-6 border border-blue-100">
                                 <p class="text-sm text-gray-700 mb-2 font-medium">Khái niệm:</p>
                                 <p class="text-sm text-gray-600 mb-4">Hành vi quản lý tài chính cá nhân phản ánh năng lực và thói quen điều tiết nguồn lực tài chính của sinh viên để đảm bảo sự an toàn tài chính. Khái niệm này bao gồm việc lập kế hoạch chi tiêu, theo dõi thu chi, kiểm soát ngân sách, duy trì tiết kiệm, kiểm soát nợ và chuẩn bị quỹ dự phòng.</p>
@@ -298,7 +291,6 @@
         </section>
     </div>
 
-    <!-- ===== MÀN HÌNH CẢM ƠN & TAROT ===== -->
     <div id="thank-you-view" class="hidden min-h-screen bg-slate-900 flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"></div>
 
@@ -336,13 +328,21 @@
                     </div>
                 </div>
 
-                <div id="action-buttons" class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                    <button id="returnHomeBtn" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 px-8 py-3 rounded-full font-semibold transition-all">
-                        Quay về trang chủ
-                    </button>
-                    <button id="openTuViBtn" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
-                        <span>🔮</span> Xem tử vi miễn phí
-                    </button>
+                <div id="gift-selection-area" class="mt-10">
+                    <h3 class="text-lg text-white mb-5 font-semibold">🎁 Vui lòng chọn 1 phần quà cảm ơn:</h3>
+                    <div id="action-buttons" class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button id="openTuViBtn" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                            <span>🔮</span> Xem tử vi chi tiết
+                        </button>
+                        <button id="openTarotQuestionBtn" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                            <span>🎴</span> Hỏi 1 câu Tarot miễn phí
+                        </button>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button id="returnHomeBtn" class="text-white/60 hover:text-white underline text-sm transition-all">
+                            Bỏ qua quà tặng, quay về trang chủ
+                        </button>
+                    </div>
                 </div>
 
                 <div id="tuvi-form-container" class="hidden mt-8 text-left bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 relative">
@@ -399,6 +399,26 @@
                     </form>
                 </div>
 
+                <div id="tarot-question-container" class="hidden mt-8 text-left bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 relative">
+                    <button id="closeTarotQuestionBtn" class="absolute top-4 right-4 text-white/50 hover:text-white text-xl">✕</button>
+                    <h3 class="text-2xl font-bold text-purple-300 mb-2">Hỏi 1 câu Tarot miễn phí</h3>
+                    <p class="text-blue-100 mb-4">Để nhận trải bài, bạn vui lòng làm theo hướng dẫn sau:</p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 mb-6 border border-white/10 text-white text-sm sm:text-base leading-relaxed space-y-2">
+                        <p><strong>Bước 1:</strong> Chụp ảnh màn hình trang này (minh chứng bạn đã hoàn thành khảo sát).</p>
+                        <p><strong>Bước 2:</strong> Nhắn tin trực tiếp qua Instagram <a href="https://instagram.com/dminh.rind" target="_blank" class="text-purple-400 font-bold hover:underline">@dminh.rind</a> và gửi kèm ảnh chụp màn hình.</p>
+                        <p><strong>Bước 3:</strong> Cung cấp các thông tin sau trong tin nhắn:</p>
+                        <ul class="list-disc list-inside pl-2 text-blue-200">
+                            <li>Họ và tên, ngày tháng năm sinh (kèm ảnh rõ mặt nếu có).</li>
+                            <li>Thông tin đối phương (nếu câu hỏi liên quan đến người khác).</li>
+                            <li>Câu hỏi cụ thể bạn cần hỏi.</li>
+                        </ul>
+                    </div>
+                    <a href="https://instagram.com/dminh.rind" target="_blank" class="w-full inline-flex justify-center items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Liên hệ Instagram @dminh.rind
+                    </a>
+                </div>
+
                 <div id="tuvi-success-msg" class="hidden mt-8 text-center bg-green-500/10 p-6 sm:p-8 rounded-2xl border border-green-500/30">
                     <div class="text-5xl mb-4">✅</div>
                     <h3 class="text-2xl font-bold text-white mb-3">Gửi thông tin thành công!</h3>
@@ -448,7 +468,7 @@
             { img: "Eight of Wands", title: "29. Eight of Wands", text: "Tốc độ! Mọi thứ diễn ra rất nhanh chóng trong hôm nay. Tin tức đến dồn dập, hãy nắm bắt ngay lập tức đừng chần chừ." },
             { img: "Nine of Wands", title: "30. Nine of Wands", text: "Bạn có thể cảm thấy kiệt sức, nhưng hãy ráng lên, bạn đã đến rất gần vạch đích rồi. Sự kiên trì phút chót là chìa khóa." },
             { img: "Ten of Wands", title: "31. Ten of Wands", text: "Bạn đang ôm đồm quá nhiều trách nhiệm. Hôm nay, hãy học cách nói 'Không' và san sẻ gánh nặng cho người khác trước khi bạn gục ngã." },
-            { img: "Page of Wands", title: "32. Page of Wands", text: "Bạn sẽ nhận được một tin tức hoặc ý tưởng khiến bạn háo hức. Hãy giữ tinh thần học hỏi và tò mò." },
+            { img: "Page of Wands", title: "32. Page of Wands", text: "Bạn sẽ nhận được một tin tức hoặc ý tưởng khiến bạn háo hức. Hãy giữ tinh thần học hỏi và tò mở." },
             { img: "Knight of Wands", title: "33. Knight of Wands", text: "Sự nhiệt huyết và khao khát hành động đang cháy bỏng. Tuy nhiên, hãy chắc chắn là bạn có suy nghĩ trước khi 'nhảy' vào một cuộc phiêu lưu mới." },
             { img: "Queen of Wands", title: "34. Queen of Wands", text: "Hãy tỏa sáng! Hôm nay bạn vô cùng quyến rũ, tự tin và tràn đầy năng lượng tích cực. Thu hút mọi người bằng sự duyên dáng của bạn." },
             { img: "King of Wands", title: "35. King of Wands", text: "Năng lượng của một người lãnh đạo có tầm nhìn. Hãy đưa ra những quyết định mạnh mẽ và truyền cảm hứng cho những người xung quanh bạn." },
@@ -660,25 +680,46 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
+        // Xử lý khu vực chọn quà
+        const giftSelectionArea = document.getElementById('gift-selection-area');
+        
+        // Nút và Form Tử Vi
         const openTuViBtn = document.getElementById('openTuViBtn');
         const tuviFormContainer = document.getElementById('tuvi-form-container');
         const closeTuViBtn = document.getElementById('closeTuViBtn');
+        
+        // Nút và Form Tarot
+        const openTarotQuestionBtn = document.getElementById('openTarotQuestionBtn');
+        const tarotQuestionContainer = document.getElementById('tarot-question-container');
+        const closeTarotQuestionBtn = document.getElementById('closeTarotQuestionBtn');
+        
         const tarotResultSection = document.getElementById('tarot-result-section');
-        const actionButtons = document.getElementById('action-buttons');
         const tuviForm = document.getElementById('tuviForm');
         const tuviSuccessMsg = document.getElementById('tuvi-success-msg');
         const returnHomeFromTuViBtn = document.getElementById('returnHomeFromTuViBtn');
 
         openTuViBtn.addEventListener('click', () => {
             tarotResultSection.classList.add('hidden');
-            actionButtons.classList.add('hidden');
+            giftSelectionArea.classList.add('hidden');
             tuviFormContainer.classList.remove('hidden');
         });
 
         closeTuViBtn.addEventListener('click', () => {
             tuviFormContainer.classList.add('hidden');
             tarotResultSection.classList.remove('hidden');
-            actionButtons.classList.remove('hidden');
+            giftSelectionArea.classList.remove('hidden');
+        });
+
+        openTarotQuestionBtn.addEventListener('click', () => {
+            tarotResultSection.classList.add('hidden');
+            giftSelectionArea.classList.add('hidden');
+            tarotQuestionContainer.classList.remove('hidden');
+        });
+
+        closeTarotQuestionBtn.addEventListener('click', () => {
+            tarotQuestionContainer.classList.add('hidden');
+            tarotResultSection.classList.remove('hidden');
+            giftSelectionArea.classList.remove('hidden');
         });
 
         tuviForm.addEventListener('submit', function(e) {
@@ -717,7 +758,7 @@
             setTimeout(() => {
                 tuviSuccessMsg.classList.add('hidden');
                 tarotResultSection.classList.remove('hidden');
-                actionButtons.classList.remove('hidden');
+                giftSelectionArea.classList.remove('hidden');
             }, 500);
         });
 
